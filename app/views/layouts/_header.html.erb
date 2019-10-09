@@ -1,0 +1,8 @@
+<nav class="navbar">
+    <ul>
+      <% if logged_in?%>
+        <li>Hello, <%= current_user.name %></li>
+        <%= link_to "Log out", logout_path, method: :delete %>
+      <% end %>
+    </ul>
+</nav>
