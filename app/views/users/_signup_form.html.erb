@@ -1,0 +1,16 @@
+<%= form_with scope: :user, url: signup_path, local: true do |f| %>
+
+  <% unless @user.errors.empty? %>
+    <ul class="alert alert-danger">
+      <% @user.errors.full_messages.each do |message| %>
+        <li> <%= message %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Create account" %>
+
+<% end %>
