@@ -1,2 +1,40 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<div class="container col-md-6">
+
+  <h1>Create a new event</h1>
+  <%= form_with scope: :event, url: events_path, local: true do |f| %>
+
+    <% unless @event.errors.empty? %>
+      <ul class="alert alert-danger">
+        <% @user.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :date %>
+      <%= f.date_field :date, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :location %>
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Create event", class: "btn btn-primary form-control" %>
+    </div>
+
+  <% end %>
+
+</div>
