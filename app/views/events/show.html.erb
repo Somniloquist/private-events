@@ -1,1 +1,6 @@
-<h1>Show#event</h1>
+<div class="container">
+  <h1><%= @event.title %></h1>
+  <h6 class="event-details">Created by <%= @event.creator.name %></h6>
+  <h6 class="event-details"><%=@event.date.strftime("%A %B %d, %Y")%> at <%= @event.location %></h6>
+  <p class="event-description"><%= @event.description%></p>
+</div>
