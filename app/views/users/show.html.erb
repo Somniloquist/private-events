@@ -4,4 +4,11 @@
   <% else %>
     <h1><%= @user.name %></h1>
   <% end %>
+
+  <% unless @events.empty? %>
+    <h2>Events</h2>
+      <%= render @events %>
+  <% else %>
+    <p>Hmm... <%= @user.name %> hasn't created any events yet.</p>
+  <% end %>
 </div>

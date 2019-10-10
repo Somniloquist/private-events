@@ -1,7 +1,24 @@
+@import "bootstrap";
+
 .profile-link {
   &:before {
     padding-right: 5px;
     font-family: "FontAwesome";
     content: "\f007";
   }
+}
+
+.event-card  {
+  background: $gray-100;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.event-details {
+  color: $gray-600;
+  font-size: 90%;
+}
+
+.event-primary {
+  border-left: 4px solid $green;
 }
