@@ -8,9 +8,13 @@
     </ul>
   <% end %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
 
-  <%= f.submit "Create account" %>
+  <div class="form-group">
+    <%= f.submit "Create account", class: "btn btn-primary form-control" %>
+  </div>
 
 <% end %>

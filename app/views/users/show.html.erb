@@ -1,1 +1,7 @@
-<h1><%= @user.name %></h1>
+<div class="container">
+  <% if current_user == @user && logged_in? %>
+    <h1>Hello, <%= @user.name %></h1>
+  <% else %>
+    <h1><%= @user.name %></h1>
+  <% end %>
+</div>
