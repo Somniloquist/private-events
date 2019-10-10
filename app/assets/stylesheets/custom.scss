@@ -1,0 +1,7 @@
+.profile-link {
+  &:before {
+    padding-right: 5px;
+    font-family: "FontAwesome";
+    content: "\f007";
+  }
+}
