@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: params[:session][:name])
     if @user
       log_in @user
-      redirect_to @user
+      redirect_to root_path
     else
       render :new
     end
@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    redirect_to login_path
+    redirect_to root_path
   end
 end
