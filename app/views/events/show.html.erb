@@ -7,6 +7,7 @@
       <p class="event-description"><%= @event.description%></p>
     </div>
     <div class="col-md">
+      <%= link_to "Invite Friends", new_invitation_path(params: { event_id: @event.id }), class: "btn btn-primary" %>
       <h2> Attendees </h2>
       <ul>
         <% @attendees.each do |attendee| %>
