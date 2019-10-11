@@ -1,5 +1,5 @@
 <%= link_to event do %>
-  <div class="event-card event-primary">
+  <div class="event-card <%= status %>">
     <h5 class="event-title"><%= event.title %></h5>
     <h6 class="event-details">
       <%= event.date.strftime("%A %B %d, %Y") %> at <%= event.location %>

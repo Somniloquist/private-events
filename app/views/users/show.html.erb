@@ -8,13 +8,6 @@
   <% if @upcoming_events.empty? && @past_events.empty? %>
     <p>Hmm... <%= @user.name %> hasn't created any events yet.</p>
   <% else %>
-    <% unless @upcoming_events.empty? %>
-      <h2>Upcoming Events</h2>
-      <%= render @upcoming_events %>
-    <% end %>
-      <% unless @past_events.empty?%>
-        <h2>Past Events</h2>
-        <%= render @past_events %>
-      <% end %>
+    <%= render "shared/event_list" %>
   <% end %>
 </div>

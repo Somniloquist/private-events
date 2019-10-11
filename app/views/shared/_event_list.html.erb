@@ -1,0 +1,9 @@
+
+      <% unless @upcoming_events.empty? %>
+        <h2>Upcoming Events</h2>
+        <%= render @upcoming_events, status: "event-upcoming" %>
+      <% end %>
+      <% unless @past_events.empty?%>
+        <h2>Past Events</h2>
+        <%= render @past_events, status: "event-past" %>
+      <% end %>
