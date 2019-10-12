@@ -7,10 +7,17 @@ class InvitationsController < ApplicationController
     @user = User.find_by(invitation_params)
     if @user && @event
       @event.invite @user
-      redirect_to @event
-    else
-      render :new
     end
+    redirect_to @event
+  end
+
+  def destroy
+  end
+
+  def accept
+    invitation = Invitation.find invitation_params[:id]
+    current_user.accept invitation if current_user == invitation.user
+    redirect_to current_user
   end
 
   private
@@ -19,7 +26,7 @@ class InvitationsController < ApplicationController
     end
 
     def invitation_params
-      params.require(:invitation).permit(:name)
+      params.require(:invitation).permit(:id, :name)
     end
 
 end

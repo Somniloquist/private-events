@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get       "login",          to: "sessions#new"
   post      "login",          to: "sessions#create"
   delete    "logout",         to: "sessions#destroy"
+  post      "accept",         to: "invitations#accept"
   resources :users, only: [:create, :new, :show]
   resources :sessions, only: [:create, :new, :destroy]
   resources :events, only: [:create, :new, :index, :show]

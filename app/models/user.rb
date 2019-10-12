@@ -3,8 +3,15 @@ class User < ApplicationRecord
   has_many :invitations
   has_many :attended_events, through: :invitations, source: :event
 
-  def attend(event)
-    event.invitations.build(user_id: self.id).save
+  # def attend(event)
+  #   event.invitations.build(user_id: self.id, accepted: true).save
+  # end
+  def accept(invitation)
+    invitation.update_attribute(:accepted, true)
+  end
+
+  def pending_invitations
+    Invitation.joins(:user).where(accepted: false, user_id: self.id)
   end
 
   def upcoming_events
