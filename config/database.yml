@@ -22,11 +22,6 @@ test:
 
 production:
   <<: *default
-<<<<<<< HEAD
   database: private-events_production
   username: private-events
-=======
-  database: private_events_production
-  username: ventste_events
->>>>>>> 9a4f948c2fedbad4bcede4e11c1d9ca08907a7e5
   password: <%= ENV['PRIVATE_EVENTS_PASSWORD'] %>
