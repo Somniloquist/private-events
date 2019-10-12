@@ -5,6 +5,7 @@ An event creating and attending application. Users can signup to create events, 
 ## Prerequisites
 - ruby 2.6.3
 - rails 5.2.3
+- g++ is required for sassc gem
 
 ## Gettings started
 To get started, clone the repo and then install the needed gems:
