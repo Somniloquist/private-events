@@ -12,6 +12,9 @@ class InvitationsController < ApplicationController
   end
 
   def destroy
+    invitation = Invitation.find invitation_params[:id]
+    invitation.delete if current_user == invitation.user
+    redirect_to current_user
   end
 
   def accept

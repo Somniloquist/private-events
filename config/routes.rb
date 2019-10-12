@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post      "login",          to: "sessions#create"
   delete    "logout",         to: "sessions#destroy"
   post      "accept",         to: "invitations#accept"
+  delete    "decline",        to: "invitations#destroy"
   resources :users, only: [:create, :new, :show]
   resources :sessions, only: [:create, :new, :destroy]
   resources :events, only: [:create, :new, :index, :show]

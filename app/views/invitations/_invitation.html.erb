@@ -1,7 +1,5 @@
 <div class="invitation-card">
   <p>You are invited to <%= link_to invitation.event.title, event_path(invitation.event_id) %>.</p>
-  <%= form_with scope: :invitation, url: accept_path do |f| %>
-    <%= hidden_field_tag "invitation[id]", invitation.id %>
-    <%= f.submit "Accept Invitation", class: "btn btn-link"%>
-  <% end %>
+  <%= link_to "Accept", accept_path(invitation: {id: invitation.id }), method: :post %>
+  <%= link_to "Decline", decline_path(invitation: {id: invitation.id }), method: :delete %>
 </div>
