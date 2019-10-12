@@ -1,6 +1,6 @@
 # private-events
 
-An event creating and attending application. Users can signup to create events, send invitations and parties. 
+An event creating and attending application. Users can signup to create events, send invitations and parties. The main goal of this project is to practice many-to-many associations. Validations and testing have not been implemented in this project.
 
 ## Prerequisites
 - ruby 2.6.3
@@ -15,10 +15,6 @@ bundle install --without production
 migrate the database:
 ```
 rails db:migrate
-```
-run the test suite to ensure everything is working correctly:
-```
-rails test
 ```
 start the server:
 ```
