@@ -8,10 +8,10 @@ class User < ApplicationRecord
   end
 
   def upcoming_events
-    self.attended_events.where("date >= ?", Time.now)
+    Event.joins(:attendees).where( invitations: { accepted: true, user_id: self.id } ).where("date >= ?", Time.now)
   end
 
   def past_events
-    self.attended_events.where("date < ?", Time.now)
+    Event.joins(:attendees).where( invitations: { accepted: true, user_id: self.id } ).where("date <= ?", Time.now)
   end
 end
