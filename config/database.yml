@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: private-events_production
+  username: private-events
+  password: <%= ENV['PRIVATE_EVENTS_PASSWORD'] %>
