@@ -7,6 +7,11 @@ class Event < ApplicationRecord
     self.invitations.build(user_id: user.id).save unless invitation_exists(user)
   end
 
+  # returns a relations containing all users who accepted their event invite
+  def accepted_invitations
+    User.joins(:attended_events).where( invitations: { accepted: true, event_id: self.id } )
+  end
+
   def self.upcoming
     self.where("date >= ?", Time.now)
   end
