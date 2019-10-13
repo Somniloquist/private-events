@@ -22,7 +22,7 @@ rails server
 ```
 
 ## Live Demo
-~~You can view a live demo of the app on heroku [here](#).~~
+You can view a live demo of the app on heroku [here](https://private-events-00001.herokuapp.com/).
 
 ---
 _This project is part of [The Odin Project](https://www.theodinproject.com/) curriculum. [Project link](https://www.theodinproject.com/lessons/associations)_
